@@ -4,14 +4,14 @@ pipeline:
   stages:
     - stage: "Log Jenkins Maven Docker Java and Git versions"
       steps:
-	- sh "nvm -version"
-	- sh "java -version"
-	- sh "git --version"
-	- sh "docker --version"
+	- bat "nvm -version"
+	- bat "java -version"
+	- bat "git --version"
+	- bat "docker --version"
     - stage: "Jenkins YAML Maven Build"
       steps:
 	- git "https://github.com/Sivaganapathi07/react_redux.git"	
-	- sh "nvm clean compile test install"
+	- bat "nvm clean compile test install"
     - stage: "Final Jenkins YAML Pipeline Stage"
       steps:
-	- sh "echo 'Jenkins YAML Pipeline Compelete'";
+	- bat "echo 'Jenkins YAML Pipeline Compelete'";
